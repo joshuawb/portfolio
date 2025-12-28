@@ -1,9 +1,7 @@
-
 <!DOCTYPE HTML>
 <!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Joshua Buchanan Portfolio
+    joshuawb.github.io/portfolio
 -->
 <html>
 	<head>
@@ -12,6 +10,295 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- Flashy upgrades: no content changes, just styling -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+		<style>
+			/* ------------------------------------------------------------
+			   Flashier & cooler
+			   ------------------------------------------------------------ */
+
+			:root{
+				--glass: rgba(255,255,255,.08);
+				--glass-2: rgba(255,255,255,.12);
+				--stroke: rgba(255,255,255,.16);
+				--stroke-2: rgba(255,255,255,.22);
+				--shadow: 0 20px 70px rgba(0,0,0,.45);
+				--shadow-soft: 0 10px 35px rgba(0,0,0,.35);
+				--neon: rgba(235,169,228,.45);
+				--neon-2: rgba(120,205,255,.45);
+				--text: rgba(255,255,255,.92);
+				--muted: rgba(255,255,255,.72);
+				--muted-2: rgba(255,255,255,.60);
+			}
+
+			html, body { scroll-behavior: smooth; }
+			body{
+				font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif !important;
+				color: var(--text);
+				overflow-x: hidden;
+			}
+
+			/* Animated aurora background */
+			body::before{
+				content:"";
+				position: fixed;
+				inset: 0;
+				z-index: -3;
+				background:
+					radial-gradient(1200px 900px at 15% 20%, rgba(235,169,228,.20), transparent 60%),
+					radial-gradient(1100px 800px at 85% 25%, rgba(120,205,255,.18), transparent 60%),
+					radial-gradient(900px 700px at 70% 85%, rgba(160,255,190,.10), transparent 60%),
+					linear-gradient(135deg, rgba(30,15,45,1), rgba(10,12,30,1));
+				filter: saturate(1.2);
+			}
+
+			/* Subtle moving noise + grid */
+			body::after{
+				content:"";
+				position: fixed;
+				inset: -20%;
+				z-index: -2;
+				background:
+					linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+					linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+				background-size: 44px 44px;
+				transform: rotate(-8deg);
+				opacity: .25;
+				mask-image: radial-gradient(800px 600px at 50% 30%, black, transparent 75%);
+				pointer-events: none;
+			}
+
+			/* Make wrapper sections feel more premium */
+			.wrapper{
+				position: relative;
+			}
+
+			/* Sidebar: glass + glow */
+			#sidebar{
+				background: rgba(10, 12, 30, .65) !important;
+				backdrop-filter: blur(14px);
+				border-right: 1px solid rgba(255,255,255,.10);
+				box-shadow: 0 10px 40px rgba(0,0,0,.35);
+			}
+			#sidebar nav ul li a{
+				letter-spacing: .02em;
+				font-weight: 600;
+				color: rgba(255,255,255,.82) !important;
+				transition: transform .18s ease, color .18s ease, opacity .18s ease;
+			}
+			#sidebar nav ul li a:hover{
+				color: rgba(255,255,255,.98) !important;
+				transform: translateX(2px);
+			}
+
+			/* Hero section: glass panel */
+			#intro .inner{
+				background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+				border: 1px solid var(--stroke);
+				border-radius: 22px;
+				padding: 2.5rem 2.4rem;
+				box-shadow: var(--shadow);
+				backdrop-filter: blur(14px);
+				position: relative;
+				overflow: hidden;
+			}
+			#intro .inner::before{
+				content:"";
+				position:absolute;
+				inset:-2px;
+				background: radial-gradient(700px 220px at 20% 0%, rgba(235,169,228,.22), transparent 70%),
+							radial-gradient(700px 220px at 80% 0%, rgba(120,205,255,.18), transparent 70%);
+				pointer-events:none;
+			}
+
+			h1,h2,h3{
+				letter-spacing: -.02em !important;
+			}
+			h1{
+				font-weight: 800 !important;
+				line-height: 1.05 !important;
+				margin-bottom: .6rem !important;
+				text-shadow: 0 10px 35px rgba(0,0,0,.45);
+			}
+			#intro p{ color: var(--muted) !important; font-size: 1.05em; }
+
+			/* Section headings: gradient underline */
+			.wrapper .inner > h2{
+				display: inline-block;
+				position: relative;
+				padding-bottom: .35rem;
+				margin-bottom: 1.2rem;
+				font-weight: 800 !important;
+			}
+			.wrapper .inner > h2::after{
+				content:"";
+				position:absolute;
+				left:0;
+				bottom:-2px;
+				height: 3px;
+				width: 62%;
+				border-radius: 999px;
+				background: linear-gradient(90deg, rgba(235,169,228,.95), rgba(120,205,255,.85));
+				box-shadow: 0 10px 30px rgba(235,169,228,.20);
+			}
+
+			/* Buttons: premium */
+			.button{
+				border-radius: 999px !important;
+				font-weight: 700 !important;
+				letter-spacing: .01em !important;
+				text-transform: none !important;
+				background: linear-gradient(135deg, rgba(235,169,228,.90), rgba(120,205,255,.78)) !important;
+				border: 1px solid rgba(255,255,255,.22) !important;
+				box-shadow: 0 12px 30px rgba(0,0,0,.30);
+				position: relative;
+				overflow: hidden;
+			}
+			.button::before{
+				content:"";
+				position:absolute;
+				top:-60%;
+				left:-30%;
+				width: 40%;
+				height: 220%;
+				background: rgba(255,255,255,.22);
+				transform: rotate(25deg);
+				filter: blur(1px);
+				opacity: 0;
+				transition: opacity .2s ease, left .35s ease;
+			}
+			.button:hover{
+				transform: translateY(-2px);
+				box-shadow: 0 18px 42px rgba(0,0,0,.38);
+			}
+			.button:hover::before{
+				opacity: 1;
+				left: 120%;
+			}
+
+			/* Spotlights: glass cards + image glow */
+			.spotlights > section{
+				border-radius: 22px;
+				overflow: hidden;
+				border: 1px solid rgba(255,255,255,.10);
+				box-shadow: var(--shadow-soft);
+				background: rgba(255,255,255,.04);
+				backdrop-filter: blur(10px);
+			}
+			.spotlights > section .image img{
+				filter: contrast(1.05) saturate(1.08);
+			}
+			.spotlights > section .image{
+				position: relative;
+			}
+			.spotlights > section .image::after{
+				content:"";
+				position:absolute;
+				inset:0;
+				background: radial-gradient(500px 300px at 40% 30%, rgba(120,205,255,.20), transparent 60%),
+							radial-gradient(500px 300px at 60% 70%, rgba(235,169,228,.18), transparent 60%);
+				pointer-events:none;
+				mix-blend-mode: screen;
+			}
+			.spotlights > section .content .inner p{
+				color: var(--muted) !important;
+			}
+
+			/* Features sections (courses/blog) as glass tiles */
+			.features > section{
+				border-radius: 18px;
+				border: 1px solid rgba(255,255,255,.12);
+				background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+				box-shadow: 0 12px 35px rgba(0,0,0,.32);
+				backdrop-filter: blur(12px);
+				transition: transform .18s ease, border-color .18s ease;
+			}
+			.features > section:hover{
+				transform: translateY(-3px);
+				border-color: rgba(255,255,255,.20);
+			}
+			.features > section p{ color: var(--muted) !important; }
+			.features > section h3 a{ color: rgba(255,255,255,.95) !important; text-decoration: none; }
+			.features > section h3 a:hover{ text-decoration: underline; }
+
+			/* Icons: subtle neon ring */
+			.features > section .icon.major{
+				box-shadow:
+					0 0 0 1px rgba(255,255,255,.10),
+					0 14px 40px rgba(0,0,0,.35),
+					0 0 60px rgba(235,169,228,.18);
+				border-radius: 999px;
+			}
+
+			/* Grade box: keep same content, make it look premium */
+			.features > section div[style*="Grade:"]{
+				border-radius: 999px !important;
+				border: 1px solid rgba(255,255,255,.20) !important;
+				background: linear-gradient(135deg, rgba(235,169,228,.26), rgba(120,205,255,.18)) !important;
+				box-shadow: 0 16px 40px rgba(0,0,0,.25);
+				backdrop-filter: blur(10px);
+			}
+
+			/* Current role list: nicer list bullets */
+			#work ul{
+				list-style: none;
+				padding-left: 0;
+			}
+			#work ul li{
+				position: relative;
+				padding-left: 1.6rem;
+				margin: .7rem 0;
+				color: var(--muted);
+			}
+			#work ul li::before{
+				content:"";
+				position:absolute;
+				left:.2rem;
+				top:.55rem;
+				width:.55rem;
+				height:.55rem;
+				border-radius: 999px;
+				background: linear-gradient(135deg, rgba(235,169,228,.95), rgba(120,205,255,.85));
+				box-shadow: 0 0 0 4px rgba(255,255,255,.06);
+			}
+
+			/* Contact card: glass split */
+			#three .split > section{
+				border-radius: 18px;
+				border: 1px solid rgba(255,255,255,.12);
+				background: rgba(255,255,255,.06);
+				backdrop-filter: blur(12px);
+				box-shadow: 0 12px 35px rgba(0,0,0,.30);
+			}
+			#three label{ color: rgba(255,255,255,.85) !important; }
+			#three input, #three textarea{
+				background: rgba(0,0,0,.22) !important;
+				border: 1px solid rgba(255,255,255,.14) !important;
+				border-radius: 14px !important;
+				color: rgba(255,255,255,.92) !important;
+			}
+			#three input:focus, #three textarea:focus{
+				border-color: rgba(120,205,255,.35) !important;
+				box-shadow: 0 0 0 4px rgba(120,205,255,.12) !important;
+			}
+
+			/* Footer: subtle */
+			#footer{
+				background: rgba(10,12,30,.55) !important;
+				backdrop-filter: blur(12px);
+				border-top: 1px solid rgba(255,255,255,.10);
+			}
+
+			/* Reduce harsh section backgrounds from template (keep layout intact) */
+			.wrapper.style1, .wrapper.style2, .wrapper.style3,
+			.wrapper.style1-alt{
+				background: transparent !important;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -22,10 +309,11 @@
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
 							<li><a href="#one">Projects</a></li>
+							<li><a href="#work">Current role</a></li>
 							<li><a href="#two">University</a></li>
 							<!-- ADDED: Blog link -->
 							<li><a href="#blog">Blog</a></li>
-							<li><a href="#work">Current role</a></li>
+							
 							<li><a href="#three">Get in touch</a></li>
 						</ul>
 					</nav>
@@ -49,6 +337,8 @@
 							</ul>
 						</div>
 					</section>
+
+
 
 				<!-- One -->
 				 <section id="one" class="wrapper style2 spotlights">
@@ -149,165 +439,28 @@
 							</div>
 						</section>
 
+						<section>
+							<a href="#" class="image"><img src="images/paye.png" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>PAYE Tax Calculator</h2>
+									<p>A Node.js-based web application deployed on Vercel,
+										 translating NZ PAYE rules into modular, testable logic.
+										 Demonstrates server-side computation, production deployment,
+										  and clean separation of business logic from presentation. Useful for salary planning,
+										   contract comparisons, and financial transparency.</p>
+									<ul class="actions">
+										<li><a href="https://paye-tau.vercel.app/" class="button">view website</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+
 
 					</section> <!--End of section-->
 
 
-
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Postgraduate Statistics Courses</h2>
-							<p>Below is a list of the Statistics courses completed as part of the Master's programme at The University of Auckland. Please use the 'more info' buttons for further details about the individual courses.</p>
-							<div class="features">
-
-<section>
-										<span class="icon solid major fa-check"></span>
-										<h3>Advanced Data Science Practice</h3>
-										<p>Distributed computation and statistical learning.</p>
-										    <!-- Grade Box -->
-    <div style="border: 2px solid #ffffff; padding: 0.5em 1em; display: inline-block; margin-bottom: 1em; font-weight: bold; background-color: #eba9e4;">
-        <span style="color: #ffffff;">Grade: </span> <span style="color: #c77fba;">A-</span>
-    </div>
-
-    <ul class="actions">
-        <li><a href="stats769.html" class="button">more info</a></li>
-    </ul>
-</section>
-								<section>
-									<span class="icon solid major fa-check"></span>
-
-									<h3>Statistical Inference - Level 9</h3>
-									<p>Fundamental topics in estimation and statistical inference.
-										</p>
-									    <!-- Grade Box -->
-    <div style="border: 2px solid #ffffff; padding: 0.5em 1em; display: inline-block; margin-bottom: 1em; font-weight: bold; background-color: #eba9e4;">
-        <span style="color: #ffffff;">Grade: </span> <span style="color: #c77fba;">A</span>
-    </div>
-
-    <ul class="actions">
-        <li><a href="stats730.html" class="button">more info</a></li>
-    </ul>
-</section>
-
-								<section>
-    								<span class="icon solid major fa-check"></span>
-    									<h3>Foundations of Applied Multivariate Analysis</h3>
-    <p>Fundamentals of exploratory analysis of multivariate data.</p>
-
-    <!-- Grade Box -->
-    <div style="border: 2px solid #ffffff; padding: 0.5em 1em; display: inline-block; margin-bottom: 1em; font-weight: bold; background-color: #eba9e4;">
-        <span style="color: #ffffff;">Grade: </span> <span style="color: #c77fba;">A+</span>
-    </div>
-
-    <ul class="actions">
-        <li><a href="stats767.html" class="button">more info</a></li>
-    </ul>
-</section>
-										
-								<section>
-									<span class="icon solid major fa-check"></span>
-									<h3>Foundations of Statistical Inference</h3>
-									<p>Estimation, hypothesis testing, likelihood methods, multivariate distributions, joint, marginal,
-										 and conditional distributions, vector random variables, and an introduction to decision theory and Bayesian inference.</p>
-									    <!-- Grade Box -->
-    <div style="border: 2px solid #ffffff; padding: 0.5em 1em; display: inline-block; margin-bottom: 1em; font-weight: bold; background-color: #eba9e4;">
-        <span style="color: #ffffff;">Grade: </span> <span style="color: #c77fba;">A</span>
-    </div>
-									<ul class="actions">
-										<li><a href="stats732.html" class="button">more info</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-check"></span>
-									<h3>Statistical Computing</h3>
-									<p>Professional skills, advanced statistical programming, numerical computation and graphics.</p>
-									   <!-- Grade Box -->
-    <div style="border: 2px solid #ffffff; padding: 0.5em 1em; display: inline-block; margin-bottom: 1em; font-weight: bold; background-color: #eba9e4;">
-        <span style="color: #ffffff;">Grade: </span> <span style="color: #c77fba;">A+ (First in Course)</span>
-    </div>
-									<ul class="actions">
-										<li><a href="stats782.html" class="button">more info</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-check"></span>
-									<h3>Longitudinal Data Analysis</h3>
-									<p>Exploration and regression modelling of longitudinal and clustered data. </p>
-									   <!-- Grade Box -->
-    <div style="border: 2px solid #ffffff; padding: 0.5em 1em; display: inline-block; margin-bottom: 1em; font-weight: bold; background-color: #eba9e4;">
-        <span style="color: #ffffff;">Grade: </span> <span style="color: #c77fba;">A+ (First in Course)</span>
-    </div>
-									<ul class="actions">
-										<li><a href="stats768.html" class="button">more info</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-check"></span>
-									<h3>Professional Skills for Statisticians</h3>
-									<p>Statistical software, data management, data integrity, data transfer, file processing, etc. </p>
-									   <!-- Grade Box -->
-    <div style="border: 2px solid #ffffff; padding: 0.5em 1em; display: inline-block; margin-bottom: 1em; font-weight: bold; background-color: #eba9e4;">
-        <span style="color: #ffffff;">Grade: </span> <span style="color: #c77fba;">A+ (First in Course)</span>
-    </div>
-									<ul class="actions">
-										<li><a href="stats779.html" class="button">more info</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-check"></span>
-									<h3>Regression for Data Science</h3>
-									<p>Application of the generalised linear model.</p>
-									   <!-- Grade Box -->
-    <div style="border: 2px solid #ffffff; padding: 0.5em 1em; display: inline-block; margin-bottom: 1em; font-weight: bold; background-color: #eba9e4;">
-        <span style="color: #ffffff;">Grade: </span> <span style="color: #c77fba;">A-</span>
-    </div>
-									<ul class="actions">
-										<li><a href="stats762.html" class="button">more info</a></li>
-									</ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-check"></span>
-									<h3>Time Series</h3>
-									<p>Stationary processes, modelling and estimation in the time domain, forecasting and spectral analysis.</p>
-									   <!-- Grade Box -->
-    <div style="border: 2px solid #ffffff; padding: 0.5em 1em; display: inline-block; margin-bottom: 1em; font-weight: bold; background-color: #eba9e4;">
-        <span style="color: #ffffff;">Grade: </span> <span style="color: #c77fba;">A-</span>
-    </div>
-									<ul class="actions">
-										<li><a href="stats726.html" class="button">more info</a></li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
-
-				<!-- Blog (NEW) -->
-					<section id="blog" class="wrapper style2 fade-up">
-						<div class="inner">
-							<h2>Blog</h2>
-							<p> Notes on data science, study, projects, and any other interests that I felt compelled to write about. </p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-pen"></span>
-									<h3><a href="blog/post-1.html">Work in progress</a></h3>
-									<p>Coming soon</p>
-									<ul class="actions"><li><a href="blog/post-1.html" class="button">Read</a></li></ul>
-								</section>
-								<section>
-									<span class="icon solid major fa-pen"></span>
-									<h3><a href="blog/post-2.html">Work in progress</a></h3>
-									<p>Coming soon</p>
-									<ul class="actions"><li><a href="blog/post-2.html" class="button">Read</a></li></ul>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="blog/index.html" class="button">All posts</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- Current Role (NEW) -->
+										<!-- Current Role (NEW) -->
 					<section id="work" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>Current Role</h2>
@@ -337,62 +490,276 @@
 						</div>
 					</section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
+
+
+<!-- Two -->
+<section id="two" class="wrapper style3 fade-up">
+  <div class="inner">
+    <h2>Postgraduate Statistics Courses</h2>
+    <p>
+      Below is a list of the Statistics courses completed as part of the Master's programme at The University of Auckland.
+      Please use the 'more info' buttons for further details about the individual courses.
+    </p>
+
+    <!-- Clean table-style list -->
+    <div class="courses-table">
+      <div class="courses-header">
+        <div>Paper</div>
+        <div>Description</div>
+        <div>Grade</div>
+        <div></div>
+      </div>
+
+      <div class="courses-row">
+        <div class="course-title">Advanced Data Science Practice</div>
+        <div class="course-desc">Distributed computation and statistical learning.</div>
+        <div><span class="grade-pill">A-</span></div>
+        <div><a href="stats769.html" class="button small">Read more</a></div>
+      </div>
+
+      <div class="courses-row">
+        <div class="course-title">Statistical Inference - Level 9</div>
+        <div class="course-desc">Fundamental topics in estimation and statistical inference.</div>
+        <div><span class="grade-pill">A</span></div>
+        <div><a href="stats730.html" class="button small">Read more</a></div>
+      </div>
+
+      <div class="courses-row">
+        <div class="course-title">Foundations of Applied Multivariate Analysis</div>
+        <div class="course-desc">Fundamentals of exploratory analysis of multivariate data.</div>
+        <div><span class="grade-pill">A+</span></div>
+        <div><a href="stats767.html" class="button small">Read more</a></div>
+      </div>
+
+      <div class="courses-row">
+        <div class="course-title">Foundations of Statistical Inference</div>
+        <div class="course-desc">
+          Estimation, hypothesis testing, likelihood methods, multivariate distributions, and an intro to decision theory and Bayesian inference.
+        </div>
+        <div><span class="grade-pill">A</span></div>
+        <div><a href="stats732.html" class="button small">Read more</a></div>
+      </div>
+
+      <div class="courses-row">
+        <div class="course-title">Statistical Computing</div>
+        <div class="course-desc">Professional skills, advanced statistical programming, numerical computation and graphics.</div>
+        <div><span class="grade-pill grade-pill--highlight">A+ (First)</span></div>
+        <div><a href="stats782.html" class="button small">Read more</a></div>
+      </div>
+
+      <div class="courses-row">
+        <div class="course-title">Longitudinal Data Analysis</div>
+        <div class="course-desc">Exploration and regression modelling of longitudinal and clustered data.</div>
+        <div><span class="grade-pill grade-pill--highlight">A+ (First)</span></div>
+        <div><a href="stats768.html" class="button small">Read more</a></div>
+      </div>
+
+      <div class="courses-row">
+        <div class="course-title">Professional Skills for Statisticians</div>
+        <div class="course-desc">Statistical software, data management, integrity, transfer, file processing, etc.</div>
+        <div><span class="grade-pill grade-pill--highlight">A+ (First)</span></div>
+        <div><a href="stats779.html" class="button small">Read more</a></div>
+      </div>
+
+      <div class="courses-row">
+        <div class="course-title">Regression for Data Science</div>
+        <div class="course-desc">Application of the generalised linear model.</div>
+        <div><span class="grade-pill">A-</span></div>
+        <div><a href="stats762.html" class="button small">Read more</a></div>
+      </div>
+
+      <div class="courses-row">
+        <div class="course-title">Time Series</div>
+        <div class="course-desc">Stationary processes, modelling/estimation, forecasting and spectral analysis.</div>
+        <div><span class="grade-pill">A-</span></div>
+        <div><a href="stats726.html" class="button small">Read more</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add this CSS (ideally in assets/css/main.css, or inside a <style> tag for quick testing) -->
+<style>
+  .courses-table {
+    margin-top: 1.5em;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.15);
+    backdrop-filter: blur(6px);
+  }
+
+  .courses-header,
+  .courses-row {
+    display: grid;
+    grid-template-columns: 1.6fr 2.6fr 0.8fr 0.9fr;
+    gap: 1em;
+    align-items: center;
+    padding: 1em 1.25em;
+  }
+
+  .courses-header {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .courses-row {
+    border-top: 1px solid rgba(255,255,255,0.10);
+  }
+
+  .courses-row:hover {
+    background: rgba(255,255,255,0.06);
+  }
+
+  .course-title {
+    font-weight: 700;
+  }
+
+  .course-desc {
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+
+  .grade-pill {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.35em 0.7em;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85em;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(235, 169, 228, 0.18);
+    white-space: nowrap;
+  }
+
+  .grade-pill--highlight {
+    background: rgba(235, 169, 228, 0.30);
+    border-color: rgba(235, 169, 228, 0.55);
+  }
+
+  /* Hyperspace buttons are a bit tall; "small" makes it cleaner in table rows */
+  .button.small {
+    padding: 0.4em 0.8em;
+    font-size: 0.8em;
+    line-height: 3.5;
+    white-space: nowrap;
+  }
+
+  /* Responsive: stack nicely on mobile */
+  @media (max-width: 980px) {
+    .courses-header { display: none; }
+
+    .courses-row {
+      grid-template-columns: 1fr;
+      gap: 0.65em;
+    }
+
+    .courses-row > div:nth-child(3),
+    .courses-row > div:nth-child(4) {
+      display: inline-flex;
+      gap: 0.75em;
+      align-items: center;
+    }
+  }
+</style>
+
+
+				<!-- Blog (NEW) -->
+					<section id="blog" class="wrapper style2 fade-up">
 						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Please feel free to contact me, preferably via email.</p>
-							<div class="split style1">
+							<h2>Blog</h2>
+							<p> Notes on data science, study, projects, and any other interests that I felt compelled to write about. </p>
+							<div class="features">
 								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>Auckland<br />
-											New Zealand<br />
-											</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">joshuawilliambuchanan@gmail.com</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(+64) 2102565910</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://github.com/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="https://www.instagram.com/josh_josh_oh_my_gosh" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="https://www.linkedin.com/in/joshuawb/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
+									<span class="icon solid major fa-pen"></span>
+									<h3><a href="blog/datacamp-adsip.html">DataCamp's Associate Data Scientist in Python</a></h3>
+									<p>Notes on learnings from DataCamp's Associate Data Scientist in Python track over the summer between semesters to enrich my Python skills
+										 - my Master's program is almost exclusively in R.</p>
+									<ul class="actions"><li><a href="blog/datacamp-adsip.html" class="button">Read</a></li></ul>
 								</section>
 							</div>
+							<ul class="actions">
+								<li><a href="blog/index.html" class="button">All posts</a></li>
+							</ul>
 						</div>
 					</section>
+
+				
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+                        <div class="inner">
+                            <h2>Get in touch</h2>
+                             <p>Please feel free to contact me, preferably via email.</p>
+
+                            <!-- Contact card -->
+                             <div class="split style1">
+                                <section>
+                                    <ul class="contact contact-fit">
+                                        <li>
+                                            <h3>Address</h3>
+                                            <span>Auckland<br />New Zealand<br /></span>
+                                        </li>
+
+                                        <li>
+                                            <h3>Email</h3>
+                                            <!-- make it clickable + prevent overflow -->
+                                            <a class="contact-link" href="mailto:joshuawilliambuchanan@gmail.com">
+                                                joshuawilliambuchanan@gmail.com
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <h3>Phone</h3>
+                                            <!-- make it clickable + prevent overflow -->
+                                            <a class="contact-link" href="tel:+642102565910">
+                                            (+64) 2102565910
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <h3>Social</h3>
+                                            <ul class="icons">
+                                            <li><a href="https://github.com/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                                            <li><a href="https://www.instagram.com/josh_josh_oh_my_gosh" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                            <li><a href="https://www.linkedin.com/in/joshuawb/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                                            </ul>
+                                        </li>
+                                        </ul>
+                                    </section>
+                                    </div>
+                                </div>
+
+                                <!-- Fit/overflow fixes (scoped to this section) -->
+                                <style>
+                                    #three .contact-fit li { overflow: hidden; }
+
+                                    /* Long email/phone: wrap nicely instead of spilling */
+                                    #three .contact-link{
+                                    display: inline-block;
+                                    max-width: 100%;
+                                    white-space: normal;
+                                    overflow-wrap: anywhere;
+                                    word-break: break-word;
+                                    text-decoration: none;
+                                    border-bottom: 1px dotted rgba(255,255,255,0.35);
+                                    }
+
+                                    /* Keep icons from pushing the layout too wide on smaller screens */
+                                    #three .icons{
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 0.75rem;
+                                    margin-top: 0.5rem;
+                                    }
+                                    #three .icons li{ margin: 0; }
+                                </style>
+                                </section>
+
 
 			</div>
 
@@ -416,5 +783,3 @@
 
 	</body>
 </html>
-
-

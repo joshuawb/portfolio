@@ -1,0 +1,415 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>DataCamp — Associate Data Scientist in Python</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+
+  <!-- Page-only polish (keeps your site content the same; just styles + layout) -->
+  <style>
+    /* Subtle modern “card” look that still fits Hyperspace */
+    .dc-hero {
+      margin-bottom: 1.75rem;
+      padding: 1.5rem 1.5rem;
+      border-radius: 0.75rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .dc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.75rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .dc-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.20);
+      font-size: 0.95rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .dc-pill strong { font-weight: 700; }
+
+    .dc-toc {
+      margin: 1.25rem 0 2rem;
+      padding: 1.25rem 1.25rem;
+      border-radius: 0.75rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .dc-toc h3 {
+      margin: 0 0 0.75rem;
+    }
+    .dc-toc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem 1rem;
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+    @media (max-width: 900px) {
+      .dc-toc-grid { grid-template-columns: 1fr; }
+    }
+    .dc-toc a { text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.35); }
+    .dc-toc a:hover { border-bottom-style: solid; }
+
+    .dc-module {
+      margin: 1.25rem 0;
+      padding: 1.25rem 1.25rem;
+      border-radius: 0.9rem;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      scroll-margin-top: 90px; /* nicer anchor jump */
+    }
+
+    .dc-module-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .dc-module h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      letter-spacing: 0.02em;
+    }
+
+    .dc-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .dc-placeholder {
+      margin: 0.6rem 0 0.9rem;
+      opacity: 0.9;
+    }
+
+    .dc-code {
+      margin: 0.75rem 0 0;
+      padding: 0.9rem 1rem;
+      border-radius: 0.6rem;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.10);
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
+    .dc-divider {
+      height: 1px;
+      width: 100%;
+      margin: 2rem 0 1.5rem;
+      background: rgba(255,255,255,0.12);
+    }
+
+    .dc-actions {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+  <div id="wrapper">
+    <section class="wrapper style2 fade-up">
+      <div class="inner">
+
+        <!-- Intro / Hero -->
+        <div class="dc-hero">
+          <h1>DataCamp’s Associate Data Scientist in Python</h1>
+          <p>
+            This page tracks my progress through DataCamp’s <strong>Associate Data Scientist in Python</strong> career track. Over the Summer of 2025, 
+            I have been working on this between Semesters to enrich my Python skills, as my Master’s program is primarily R-focused.
+            It contains <strong>23 courses</strong> and should take approximately <strong>90 hours</strong> to complete.
+            Each module below has placeholders where I’ll add notes, code snippets, and key takeaways.
+          </p>
+          <ul class="dc-meta">
+            <li class="dc-pill">📚 <strong>23</strong> courses</li>
+            <li class="dc-pill">⏱️ <strong>~90</strong> hours</li>
+            <li class="dc-pill">🧠 Notes + code blocks</li>
+          </ul>
+        </div>
+
+        <!-- Mini Table of Contents -->
+        <div class="dc-toc">
+          <h3>Table of Contents</h3>
+          <ol class="dc-toc-grid">
+            <li><a href="#mod-01">Introduction to Python</a></li>
+            <li><a href="#mod-02">Intermediate Python</a></li>
+            <li><a href="#mod-03">Data Manipulation with pandas</a></li>
+            <li><a href="#mod-04">Joining Data with pandas</a></li>
+            <li><a href="#mod-05">Intro to Statistics in Python</a></li>
+            <li><a href="#mod-06">Intro to Data Visualization with Matplotlib</a></li>
+            <li><a href="#mod-07">Intro to Data Visualization with Seaborn</a></li>
+            <li><a href="#mod-08">Intro to Functions in Python</a></li>
+            <li><a href="#mod-09">Python Toolbox</a></li>
+            <li><a href="#mod-10">Exploratory Data Analysis in Python</a></li>
+            <li><a href="#mod-11">Working with Categorical Data in Python</a></li>
+            <li><a href="#mod-12">Data Communication Concepts</a></li>
+            <li><a href="#mod-13">Introduction to Importing Data in Python</a></li>
+            <li><a href="#mod-14">Cleaning Data in Python</a></li>
+            <li><a href="#mod-15">Working with Dates and Times in Python</a></li>
+            <li><a href="#mod-16">Writing Functions in Python</a></li>
+            <li><a href="#mod-17">Introduction to Regression with statsmodels in Python</a></li>
+            <li><a href="#mod-18">Sampling in Python</a></li>
+            <li><a href="#mod-19">Hypothesis Testing in Python</a></li>
+            <li><a href="#mod-20">Experimental Design in Python</a></li>
+            <li><a href="#mod-21">Supervised Learning with scikit-learn</a></li>
+            <li><a href="#mod-22">Unsupervised Learning in Python</a></li>
+            <li><a href="#mod-23">Machine Learning with Tree-Based Models in Python</a></li>
+          </ol>
+        </div>
+
+        <div class="dc-divider"></div>
+
+        <!-- Modules -->
+        <section id="mod-01" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Introduction to Python</h2>
+            <span class="dc-badge">Module 1</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Summary of key ideas + what I practised.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-02" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Intermediate Python</h2>
+            <span class="dc-badge">Module 2</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Notes + concepts I found important.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-03" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Data Manipulation with pandas</h2>
+            <span class="dc-badge">Module 3</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Common patterns (filtering, grouping, transforms, etc.).</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-04" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Joining Data with pandas</h2>
+            <span class="dc-badge">Module 4</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Merge/join patterns + pitfalls.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-05" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Intro to Statistics in Python</h2>
+            <span class="dc-badge">Module 5</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Distributions, summary stats, sampling intuition.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-06" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Intro to Data Visualization with Matplotlib</h2>
+            <span class="dc-badge">Module 6</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Plot types + best practices.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-07" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Intro to Data Visualization with Seaborn</h2>
+            <span class="dc-badge">Module 7</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> High-level charts + styling.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-08" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Intro to Functions in Python</h2>
+            <span class="dc-badge">Module 8</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Function basics, scope, parameters.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-09" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Python Toolbox</h2>
+            <span class="dc-badge">Module 9</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Iterators, generators, comprehension patterns.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-10" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Exploratory Data Analysis in Python</h2>
+            <span class="dc-badge">Module 10</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> EDA workflow + key plots/stat checks.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-11" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Working with Categorical Data in Python</h2>
+            <span class="dc-badge">Module 11</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Encoding, ordering, grouping, category dtype.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-12" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Data Communication Concepts</h2>
+            <span class="dc-badge">Module 12</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Storytelling, audience, chart selection, clarity.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-13" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Introduction to Importing Data in Python</h2>
+            <span class="dc-badge">Module 13</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> CSV/Excel/JSON/SQL basics + patterns.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-14" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Cleaning Data in Python</h2>
+            <span class="dc-badge">Module 14</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Missingness, duplicates, types, validation.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-15" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Working with Dates and Times in Python</h2>
+            <span class="dc-badge">Module 15</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Parsing, time zones, resampling, features.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-16" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Writing Functions in Python</h2>
+            <span class="dc-badge">Module 16</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Clean APIs, docstrings, testing mindset.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-17" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Introduction to Regression with statsmodels in Python</h2>
+            <span class="dc-badge">Module 17</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> OLS, diagnostics, interpretation.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-18" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Sampling in Python</h2>
+            <span class="dc-badge">Module 18</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Bootstrap, simulation, sampling distributions.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-19" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Hypothesis Testing in Python</h2>
+            <span class="dc-badge">Module 19</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> p-values, test choice, assumptions, power.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-20" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Experimental Design in Python</h2>
+            <span class="dc-badge">Module 20</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> A/B tests, bias, randomisation, metrics.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-21" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Supervised Learning with scikit-learn</h2>
+            <span class="dc-badge">Module 21</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Train/test, CV, pipelines, metrics.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-22" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Unsupervised Learning in Python</h2>
+            <span class="dc-badge">Module 22</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Clustering, scaling, dimensionality reduction.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <section id="mod-23" class="dc-module">
+          <div class="dc-module-header">
+            <h2>Machine Learning with Tree-Based Models in Python</h2>
+            <span class="dc-badge">Module 23</span>
+          </div>
+          <p class="dc-placeholder"><em>Placeholder:</em> Decision trees, RF/GBM ideas, feature importance.</p>
+          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+        </section>
+
+        <!-- Actions -->
+        <div class="dc-actions">
+          <a href="index.html" class="button">All posts</a>
+          <a href="../index.html#blog" class="button">Back to Home</a>
+          <a href="#wrapper" class="button scrolly">Back to Top</a>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/browser.min.js"></script>
+  <script src="../assets/js/breakpoints.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
