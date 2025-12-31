@@ -3907,3 +3907,65 @@ input, select, textarea {
 			}
 
 		}
+
+
+
+		/* Condensed projects list */
+.mini-projects {
+  margin-top: 1.25em;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+}
+
+.mini-project {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1em;
+  align-items: center;
+  padding: 1em 1.25em;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+.mini-project:first-child {
+  border-top: none;
+}
+
+.mini-project strong {
+  display: block;
+  font-size: 1.05em;
+}
+
+.mini-desc {
+  display: block;
+  margin-top: 0.25em;
+  font-size: 0.95em;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+.minor {
+  opacity: 0.8;
+  font-size: 0.95em;
+}
+
+.button.small {
+  padding: 0.4em 0.8em;
+  font-size: 0.75em;
+  line-height: 1.1;
+}
+
+/* Mobile */
+@media (max-width: 736px) {
+  .mini-project {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .mini-project .button {
+    margin-top: 0.5em;
+    align-self: flex-start;
+  }
+}

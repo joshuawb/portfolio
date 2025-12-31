@@ -193,8 +193,29 @@
             <h2>Introduction to Python</h2>
             <span class="dc-badge">Module 1</span>
           </div>
-          <p class="dc-placeholder"><em>Placeholder:</em> Summary of key ideas + what I practised.</p>
-          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          <p class="dc-placeholder"><em>Python basics, python lists, functions and packages, and NumPy: 
+            <br />
+            - Python basics: syntax, variables, data types
+            <br />
+            - Python lists: creating, indexing, slicing
+            <br />
+            - Functions and packages: defining functions, importing packages
+            <br />
+            - NumPy: arrays, array operations </p>
+          <pre class="dc-code"><code>import numpy as np
+
+sales = [120, 150, 90, 200, 175]
+sales = np.array(sales)
+
+def normalise(values):
+    return (values - np.mean(values)) / np.std(values)
+
+z_scores = normalise(sales)
+
+print("Z-scores:", np.round(z_scores, 2))</code></pre>
+          Certificate of Completion:
+          <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/bc9b3ad692699353933bcfbd464f37e7c3d25671?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa&utm_source=copylink"> here</a>.
+
         </section>
 
         <section id="mod-02" class="dc-module">
@@ -202,8 +223,60 @@
             <h2>Intermediate Python</h2>
             <span class="dc-badge">Module 2</span>
           </div>
-          <p class="dc-placeholder"><em>Placeholder:</em> Notes + concepts I found important.</p>
-          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          <p class="dc-placeholder"><em>Matplotlib, dictionaries & Pandas, logic & control flow, and loops:</em>
+            <br />
+            - Matplotlib: plotting basics, customization, multiple plots
+            <br />
+            - Dictionaries & Pandas: creating, accessing, manipulating
+            <br />
+            - Logic, Control Flow, and Filtering: if statements, loops, list comprehensions
+            <br />
+            - Loops: for loops, while loops, nested loops</p>
+          <pre class="dc-code"><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+# Dictionary → DataFrame
+data = {
+    "day": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "steps": [8200, 7600, 10400, 9800, 12000, 15000, 13200]
+}
+
+df = pd.DataFrame(data)
+
+# Logic & filtering
+active_days = df[df["steps"] > 10000]
+
+# Loop + list comprehension
+labels = []
+for steps in df["steps"]:
+    if steps >= 12000:
+        labels.append("High")
+    elif steps >= 9000:
+        labels.append("Medium")
+    else:
+        labels.append("Low")
+
+df["activity_level"] = labels
+
+# Matplotlib: multiple plots + customization
+fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+
+# Bar plot
+axes[0].bar(df["day"], df["steps"], color="steelblue")
+axes[0].axhline(10000, linestyle="--", color="red", alpha=0.7)
+axes[0].set_title("Daily Step Count")
+axes[0].set_ylabel("Steps")
+
+# Scatter plot
+axes[1].scatter(df["day"], df["steps"], c=df["steps"], cmap="viridis")
+axes[1].set_title("Steps by Day (Colored by Value)")
+axes[1].set_ylabel("Steps")
+
+plt.tight_layout()
+plt.show()
+</code></pre>
+          Certificate of Completion:
+          <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/e7727334c2c548043ef4c72a7f28797e9687d2ed?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa&utm_source=copylink"> here</a>.
         </section>
 
         <section id="mod-03" class="dc-module">
@@ -211,8 +284,64 @@
             <h2>Data Manipulation with pandas</h2>
             <span class="dc-badge">Module 3</span>
           </div>
-          <p class="dc-placeholder"><em>Placeholder:</em> Common patterns (filtering, grouping, transforms, etc.).</p>
-          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          <p class="dc-placeholder"><em>Transforming DataFrames, Aggregating DataFrames, Slicing and Indexing DataFrames, and Creating and Visualizing DataFrames:</em> 
+            <br />
+            - Transforming DataFrames: adding, modifying, removing columns
+            <br />
+            - Aggregating DataFrames: groupby, pivot tables, summary statistics
+            <br />
+            - Slicing and Indexing DataFrames: loc, iloc, boolean indexing
+            <br />
+            - Creating and Visualizing DataFrames: creating DataFrames from scratch, basic plotting with pandas
+          </p>
+          <pre class="dc-code"><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+# Create DataFrame from scratch
+data = {
+    "player": ["A", "B", "C", "A", "B", "C"],
+    "week": [1, 1, 1, 2, 2, 2],
+    "score": [120, 95, 110, 135, 105, 125]
+}
+
+df = pd.DataFrame(data)
+
+# Transforming DataFrames: add / modify columns
+df["score_change"] = df.groupby("player")["score"].diff()
+df["high_score"] = df["score"] >= 120
+
+# Slicing and indexing
+week_two = df.loc[df["week"] == 2, ["player", "score"]]
+first_three_rows = df.iloc[:3]
+
+# Aggregation: groupby + summary stats
+summary = (
+    df.groupby("player")["score"]
+      .agg(mean_score="mean", max_score="max")
+)
+
+# Pivot table
+pivot = df.pivot_table(
+    values="score",
+    index="week",
+    columns="player",
+    aggfunc="mean"
+)
+
+# Basic pandas plotting
+summary["mean_score"].plot(
+    kind="bar",
+    title="Average Score by Player",
+    ylabel="Score",
+    xlabel="Player",
+    color="steelblue"
+)
+
+plt.tight_layout()
+plt.show()
+</code></pre>
+          Certificate of Completion:
+          <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/6bcbb0b271d5ef94b547bf0005a610f5632ea581?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa&utm_source=copylink"> here</a>.
         </section>
 
         <section id="mod-04" class="dc-module">
@@ -220,8 +349,52 @@
             <h2>Joining Data with pandas</h2>
             <span class="dc-badge">Module 4</span>
           </div>
-          <p class="dc-placeholder"><em>Placeholder:</em> Merge/join patterns + pitfalls.</p>
-          <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          <p class="dc-placeholder"><em>Data merging basics, merging tables with different join types, advances merging and concatenating,
+             merging ordered time-series data:</em> 
+            <br />
+            - Data merging basics: merge function, common columns, suffixes
+            <br />
+            - Merging tables with different join types: inner, outer, left, right joins
+            <br />
+            - Advanced merging and concatenating: multi-index merges, concatenation along rows/columns
+            <br />
+            - Merging ordered time-series data: asof merges, time-based joins
+          </p>
+          <pre class="dc-code"><code>import pandas as pd
+
+# Create DataFrames
+df1 = pd.DataFrame({
+    "key": ["A", "B", "C"],
+    "value1": [1, 2, 3]
+})
+
+df2 = pd.DataFrame({
+    "key": ["B", "C", "D"],
+    "value2": [4, 5, 6]
+})
+
+# Basic merging
+merged = pd.merge(df1, df2, on="key", how="inner")
+
+# Advanced merging
+df1.set_index("key", inplace=True)
+df2.set_index("key", inplace=True)
+merged = df1.join(df2, how="outer", lsuffix="_left", rsuffix="_right")
+
+# Concatenation
+concatenated = pd.concat([df1, df2], axis=0)
+
+# Time-based merging
+time_indexed = pd.DataFrame({
+    "date": pd.date_range("2023-01-01", periods=3),
+    "value": [1, 2, 3]
+}).set_index("date")
+
+asof_merged = pd.merge_asof(time_indexed, time_indexed, on="date", direction="backward")
+
+</code></pre>
+          Certificate of Completion:
+          <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/e8900628458ea808be69c66294a8b17d3344d120?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa&utm_source=copylink"> here</a>.
         </section>
 
         <section id="mod-05" class="dc-module">
@@ -231,6 +404,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Distributions, summary stats, sampling intuition.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-06" class="dc-module">
@@ -240,6 +415,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Plot types + best practices.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-07" class="dc-module">
@@ -249,6 +426,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> High-level charts + styling.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-08" class="dc-module">
@@ -258,6 +437,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Function basics, scope, parameters.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-09" class="dc-module">
@@ -267,6 +448,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Iterators, generators, comprehension patterns.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-10" class="dc-module">
@@ -276,6 +459,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> EDA workflow + key plots/stat checks.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-11" class="dc-module">
@@ -285,6 +470,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Encoding, ordering, grouping, category dtype.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-12" class="dc-module">
@@ -294,6 +481,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Storytelling, audience, chart selection, clarity.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-13" class="dc-module">
@@ -303,6 +492,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> CSV/Excel/JSON/SQL basics + patterns.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-14" class="dc-module">
@@ -312,6 +503,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Missingness, duplicates, types, validation.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-15" class="dc-module">
@@ -321,6 +514,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Parsing, time zones, resampling, features.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-16" class="dc-module">
@@ -330,6 +525,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Clean APIs, docstrings, testing mindset.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-17" class="dc-module">
@@ -339,6 +536,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> OLS, diagnostics, interpretation.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-18" class="dc-module">
@@ -348,6 +547,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Bootstrap, simulation, sampling distributions.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-19" class="dc-module">
@@ -357,6 +558,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> p-values, test choice, assumptions, power.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-20" class="dc-module">
@@ -366,6 +569,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> A/B tests, bias, randomisation, metrics.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-21" class="dc-module">
@@ -375,6 +580,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Train/test, CV, pipelines, metrics.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-22" class="dc-module">
@@ -384,6 +591,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Clustering, scaling, dimensionality reduction.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <section id="mod-23" class="dc-module">
@@ -393,6 +602,8 @@
           </div>
           <p class="dc-placeholder"><em>Placeholder:</em> Decision trees, RF/GBM ideas, feature importance.</p>
           <pre class="dc-code"><code># Placeholder: add example code snippets here</code></pre>
+          Certificate of Completion:
+          <a href=""> here</a>.
         </section>
 
         <!-- Actions -->
